@@ -17,7 +17,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content == "Hey" and message.author.name == "GGL":
+    if message.content == "Hey":
         time.sleep(2)
         await client.send_message(message.channel, random.choice(["Whats up guys", "Hello", "Hey", "What is going on"])) 
     
