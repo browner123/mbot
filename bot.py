@@ -17,8 +17,12 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content == "Hello":
-        time.sleep(2)
-        await client.send_message(message.channel, random.choice(["Whats up guys", "Hello", "Hey", "What is going on"])) 
+    if message.content == "Choose":
+        server = message.server.members
+        user = list(server)
+        x = random.randint(1, len(server) - 1)
+        y = random.randint(3,9)
+        time.sleep(y)
+        await client.send_message(message.channel, str(user[x]) + ", if he does not play then ask me again")
     
 client.run(os.getenv('TOKEN'))
