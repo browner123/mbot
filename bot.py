@@ -20,5 +20,7 @@ async def on_message(message):
     if message.content == "Hello":
         time.sleep(2)
         await client.send_message(message.channel, random.choice(["Whats up guys", "Hello", "Hey", "What is going on"])) 
+        if message.content == "How are you":
+            await client.send_message(message.channel, random.choice(["ok", "good"])) 
     
 client.run(os.getenv('TOKEN'))
